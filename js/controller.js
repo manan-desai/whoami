@@ -1,6 +1,5 @@
 
 $(document).ready(function(){
-  $( ".new_container" ).append( element );
   var allSelects = document.getElementsByTagName("p");
   var lastSelect = allSelects[allSelects.length-1];
   lastSelect.focus();
