@@ -1,19 +1,34 @@
+
 $(document).ready(function(){
+  var allSelects = document.getElementsByTagName("p");
+  var lastSelect = allSelects[allSelects.length-1];
+  lastSelect.focus();
+
     $("#main_container").click(function(){
-  var input = $("#input");
-  input.focus();
+
+      lastSelect.focus();
+
 });
 });
 
 $(document).keypress(function(e) {
     if(e.which == 13) {
-      
-      var element = "<div style=\"margin-top:20;\">C:\\Person\\Information&gt  <p id=\"input\" contenteditable=\"true\"></p> <span class=\"blink_me\">_</span></div>"
-        $("#cmd_black").after(element);
+      var allSelects = document.getElementsByTagName("span");
+      var lastSelect = allSelects[allSelects.length-1];
+      $(lastSelect).hide();
+      var element = "<div class=\"remove\" style=\"margin-top:20;\">C:\\Person\\Information&gt  <p class=\"single-line\" id=\"input\" contenteditable=\"true\"></p> <span class=\"blink_me\">_</span></div>"
+        $( ".new_container" ).append( element );
+        allSelects = document.getElementsByTagName("p");
+        lastSelect = allSelects[allSelects.length-1];
+        lastSelect.focus();
+    }
+    if(e.which == 113){
+      $(".remove").remove();
     }
 });
 
 
 
-//var allSelects = document.getElementsByTagName("p");  last element
+
+//var allSelects = document.getElementsByTagName("p");
 //var lastSelect = allSelects[allSelects.length-1];

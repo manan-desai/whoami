@@ -57,6 +57,7 @@ p{
   display:inline; //stop here
   height: 100%;
   border-style: none;
+  background: black;
 }
 
 #input:focus {
@@ -73,4 +74,17 @@ p{
   50% {
     opacity: 0;  //stop to blink
   }
+}
+
+[contenteditable="true"].single-line {
+    white-space: nowrap;
+    width:200px;
+}
+[contenteditable="true"].single-line br {
+    display:none;
+
+}
+[contenteditable="true"].single-line * {
+    display:inline;
+    white-space:nowrap;
 }
