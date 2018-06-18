@@ -4,7 +4,6 @@ $(document).ready(function(){
   var lastSelect = allSelects[allSelects.length-1];
   lastSelect.focus();
 
-lastSelect.select();
     $("#main_container").click(function(){
 
       lastSelect.focus();
