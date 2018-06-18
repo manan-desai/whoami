@@ -6,7 +6,6 @@
 }
 
 #main_container{
-  margin-top: 2;
   font-size: 12;
     border-color: #00ffff;
     height: 100%;
@@ -20,8 +19,9 @@ display: block;
 #tab_container{
   background-color: #e6e6e6;
   color:black;
-  height: 30;
-
+  height: 30px;
+  width: 100%;
+  position: fixed;
 }
 
 #icon{
@@ -31,7 +31,7 @@ display: block;
     margin-left: 15;
 }
 p{
-      margin-top: 5;
+      margin-top: 8;
       display:inline-block;
       margin-left: 5;
 
@@ -60,7 +60,9 @@ p{
   border-style: none;
   background: black;
 }
-
+#cmd_black{
+margin-top: 30;
+}
 #input:focus {
     outline: none;
     color: transparent;
