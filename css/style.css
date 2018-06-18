@@ -21,7 +21,7 @@ display: block;
 #tab_container{
   background-color: #e6e6e6;
   color:black;
-  height: 30px;
+  height: 40px;
   width: 100%;
   position: fixed;
 }
@@ -33,16 +33,17 @@ display: block;
     margin-left: 15;
 }
 p{
-      margin-top: 7;
+      margin-top: 8;
       display:inline-block;
       margin-left: 5;
 
 }
 .p_icons {
-    height: 20;
+    height: 25;
     display: inline;
     float: right;
     padding: 5;
+    padding-top: 10;
     padding-right: 10;
     padding-left: 10;
 }
@@ -63,7 +64,7 @@ p{
   background: black;
 }
 #cmd_black{
-margin-top: 30;
+margin-top: 50;
 }
 #input:focus {
     outline: none;
@@ -97,5 +98,11 @@ margin-top: 30;
 @media only screen and (max-width: 600px) {
     body{
       font-size: 10px;
+    }
+    p{
+          margin-top: 15;
+          display:inline-block;
+          margin-left: 5;
+
     }
 }
