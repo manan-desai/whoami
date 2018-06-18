@@ -93,3 +93,9 @@ margin-top: 30;
     display:inline;
     white-space:nowrap;
 }
+
+@media only screen and (max-width: 600px) {
+    body{
+      font-size: 10px;
+    }
+}

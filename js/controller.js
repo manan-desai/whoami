@@ -3,7 +3,6 @@ $(document).ready(function(){
   var allSelects = document.getElementsByTagName("p");
   var lastSelect = allSelects[allSelects.length-1];
   lastSelect.focus();
-
     $("#main_container").click(function(){
 
       lastSelect.focus();
