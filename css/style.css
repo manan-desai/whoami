@@ -50,6 +50,9 @@ p{
 .p_icons:hover{
   background:#808080;
 }
+#p_close:hover{
+  background: #ff0000;
+}
 .icons{
 
     width: 15px;
@@ -104,5 +107,15 @@ margin-top: 50;
           display:inline-block;
           margin-left: 5;
 
+    }
+}
+@media (hover:none) {
+    /* Touch screen devices */
+    .p_icons:hover{ background: none; }
+    .p_icons:active{
+      background:#808080;
+    }
+    #p_close:active{
+      background: #ff0000;
     }
 }
