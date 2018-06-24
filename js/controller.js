@@ -42,9 +42,13 @@ var ob = {
   birthday:"my birth date is 08/10/1996"
 },
   study:{
-    college:"bapu",
-    hsc:"r.c patel",
-    ssc:"c.m patel"
+    college:"i completed Bachelor of Engneering in computer from svbit college ",
+    graduationyear:"my graduation year is 2018",
+    hsc:"i have done science from r.c patel school",
+    ssc:"i have done 10th from c.m patel"
+  },
+  social:{
+    get facebook() { redirect("www.facebook.com/manan5439") }
   }
 };
 
@@ -105,7 +109,9 @@ function calculate_age(dob) {
 
     return Math.abs(age_dt.getUTCFullYear() - 1970).toString();
 }
-
+ function redirect(url){
+   window.location = url;
+ }
 
 //var allSelects = document.getElementsByTagName("p");
 //var lastSelect = allSelects[allSelects.length-1];
