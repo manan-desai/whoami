@@ -17,7 +17,12 @@
 overflow: auto;
 display: block;
 }
-
+.remove{
+  color:green;
+}
+.text{
+  color: green;
+}
 #tab_container{
   background-color: #e6e6e6;
   color:black;
@@ -32,8 +37,8 @@ display: block;
     vertical-align: middle;
     margin-left: 15;
 }
-p{
-      margin-top: 8;
+.title{
+      margin-top: 9;
       display:inline-block;
       margin-left: 5;
 
@@ -107,11 +112,17 @@ margin-top: 50;
 
     }
 }
+#p_close:hover{
+  background: #ff0000;
+}
 @media (hover:none) {
     /* Touch screen devices */
     .p_icons:hover{ background: none; }
     .p_icons:active{
       background:#808080;
+    }
+    #p_close:hover{
+      background: none;
     }
     #p_close:active{
       background: #ff0000;

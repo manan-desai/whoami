@@ -13,9 +13,12 @@ $(document).keypress(function(e) {
       var p_value = $(last_select(".single-line")).text();
       $(last_select(".blink_me")).remove();
       $(last_select(".single-line")).remove();
-      $( ".new_container" ).append( element );
+
+
+      commands(p_value);
+
         last_select(".single-line").focus();
-        commands(p_value);
+
 
     }
 });
@@ -31,45 +34,76 @@ else{
 }
 
 var ob = {
-  firstname:"manan",
-  lastname:"desai",
+  about:{
+  firstname:"my firstname is Manan",
+  lastname:"my lastname is Desai",
+  fullname:"my fullname is Manan Desai",
+  age:"i am"+calculate_age(new Date(1996, 10, 8))+" years old",
+  birthday:"my birth date is 08/10/1996"
+},
   study:{
     college:"bapu",
     hsc:"r.c patel",
     ssc:"c.m patel"
   }
-}
+};
+
 
 function commands(value){
   var values = value.split(" ");
+if(typeof(ob[values[0]])=="string"){
 
-  if(value=="clear"){
-    $(".remove").remove();
-    $( ".new_container" ).append( element );
-    last_select("p").focus();
-  }
-  else if(typeof(ob[values[0]])=="string"){
-    alert(ob[values[0]]);
+$( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]]+"</div>" );
   }
 
   else if(typeof(ob[values[0]])=="object"){               //if obj
     if(typeof(ob[values[0]][values[1]])=="string"){
-      alert(ob[values[0]][values[1]]);
-    }
-    else {
-      alert(Object.keys(ob[values[0]]))
+      $( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]][values[1]]+".</div>" );
     }
   }
 
-  else if(value==""){
-  }
+  else if(values.length==1 && values[0]=="help"){                 //for command help
+    var help = "";
+
+    for (var key in ob) {
+    // skip loop if the property is from prototype
+    if (!ob.hasOwnProperty(key)) continue;
+    var obj = ob[key];
+    help += "</br>"
+    for (var prop in obj) {
+        // skip loop if the property is from prototype
+        if(!obj.hasOwnProperty(prop)) continue;
+
+        help += " ---) \""+key+" "+prop+"\"</br>"
+
+    }
+}
+      help += "</br> use  \"clear\" for clearing prompt</br>"
+    $( ".new_container" ).append( "<div class=\"remove\"></br> use following commands: "+help+"</div>" );
+    help = ""
+}
 
   else{
-    alert(Object.keys(ob))
+$( ".new_container" ).append( "<div class=\"remove\"></br> Command not found. </br></br> Sorry \"" +values[0] +"\" is a wrong input.  Type help for more info</div>" );
+
  }
 
+ if(value=="clear"){
+   $(".remove").remove();
+   $( ".new_container" ).append( element );
+   last_select("p").focus();
+ }
+ else{
+   $( ".new_container" ).append( element );
+ }
 
+}
 
+function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970).toString();
 }
 
 
