@@ -48,7 +48,12 @@ var ob = {
     ssc:"i have done 10th from c.m patel"
   },
   social:{
-    get facebook() { redirect("www.facebook.com/manan5439") }
+    get facebook() { redirect("www.facebook.com/manan5439") },
+    get twitter() {redirect("twitter.com/manan5439")},
+    get insta() {redirect("www.instagram.com/manan5439")},
+    get stackoverflow() {redirect("stackoverflow.com/users/9918920/manan5439")},
+    get github() {redirect("github.com/manan5439")}
+
   }
 };
 
@@ -110,7 +115,7 @@ function calculate_age(dob) {
     return Math.abs(age_dt.getUTCFullYear() - 1970).toString();
 }
  function redirect(url){
-   window.location = url;
+   window.location = "https://"+url;
  }
 
 //var allSelects = document.getElementsByTagName("p");
