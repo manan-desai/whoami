@@ -47,19 +47,18 @@ var ob = {
     hsc:"i have done science from r.c patel school",
     ssc:"i have done 10th from c.m patel"
   },
-  social:{
-    get facebook() { redirect("www.facebook.com/manan5439") },
-    get twitter() {redirect("twitter.com/manan5439")},
-    get insta() {redirect("www.instagram.com/manan5439")},
-    get stackoverflow() {redirect("stackoverflow.com/users/9918920/manan5439")},
-    get github() {redirect("github.com/manan5439")}
-
+  follow:{
+    get facebook() { redirect("https://www.facebook.com/manan5439") },
+    get twitter() {redirect("https://twitter.com/manan5439")},
+    get insta() {redirect("https://www.instagram.com/manan5439")},
+    get stackoverflow() {redirect("https://stackoverflow.com/users/9918920/manan5439")},
+    get github() {redirect("https://github.com/manan5439")}
   }
 };
 
 
 function commands(value){
-  var values = value.split(" ");
+  var values = value.toLowerCase().split(" ");
 if(typeof(ob[values[0]])=="string"){
 
 $( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]]+"</div>" );
@@ -93,7 +92,7 @@ $( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]
 }
 
   else{
-$( ".new_container" ).append( "<div class=\"remove\"></br> Command not found. </br></br> Sorry \"" +values[0] +"\" is a wrong input.  Type help for more info</div>" );
+$( ".new_container" ).append( "<div class=\"remove\"></br> Command not found. </br></br> Sorry \"" +values[0] +"\" is not recognized.  Type help for more info</div>" );
 
  }
 
@@ -115,7 +114,8 @@ function calculate_age(dob) {
     return Math.abs(age_dt.getUTCFullYear() - 1970).toString();
 }
  function redirect(url){
-   window.location = "https://"+url;
+   $( ".new_container" ).append( "<div class=\"remove\"></br>redirecting to  "+ url +". </div>" );
+   window.location = url;
  }
 
 //var allSelects = document.getElementsByTagName("p");
