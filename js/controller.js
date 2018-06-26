@@ -1,23 +1,20 @@
 
 $(document).ready(function(){
-  $( ".new_container" ).append( element );
+  typeWriter("Hello i am a program which developed by owner of this site. What would you like to know about owner of this site.</br> </br>Type \"help\" for more Info.");
 
-    last_select(".single-line").focus();
     $("#main_container").click(function(){
       last_select("p").focus();
 });
 });
-var element = "<div class=\"remove\" style=\"margin-top:20;\">C:\\Person\\Information&gt  <p class=\"single-line\" id=\"input\" contenteditable=\"true\"></p> <span class=\"blink_me\">_</span></div>"
+var element = "<div class=\"remove\" style=\"margin-top:20;\">C:\\Person\\Information&gt  <p class=\"single-line \" id=\"input\" contenteditable=\"true\"></p> <span class=\"blink_me\">_</span></div>"
 $(document).keypress(function(e) {
     if(e.which == 13) {
       var p_value = $(last_select(".single-line")).text();
       $(last_select(".blink_me")).remove();
       $(last_select(".single-line")).remove();
-
-
+if(enter){
       commands(p_value);
-
-        last_select(".single-line").focus();
+}
 
 
     }
@@ -53,6 +50,11 @@ var ob = {
     get insta() {redirect("https://www.instagram.com/manan5439")},
     get stackoverflow() {redirect("https://stackoverflow.com/users/9918920/manan5439")},
     get github() {redirect("https://github.com/manan5439")}
+  },
+  contact:{
+    phone:"My phone number is +919722424299",
+    email:"My email id is manan5439@yahoo.com",
+    address:"my address is </br>H-203,</br>mahalaxmi-2,</br>pethapur,</br>gandhinagar-382610"
   }
 };
 
@@ -61,12 +63,12 @@ function commands(value){
   var values = value.toLowerCase().split(" ");
 if(typeof(ob[values[0]])=="string"){
 
-$( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]]+"</div>" );
+typeWriter("</br> Hello, "+ob[values[0]],20);
   }
 
   else if(typeof(ob[values[0]])=="object"){               //if obj
     if(typeof(ob[values[0]][values[1]])=="string"){
-      $( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]][values[1]]+".</div>" );
+      typeWriter("Hello, "+ob[values[0]][values[1]],20)
     }
   }
 
@@ -77,32 +79,30 @@ $( ".new_container" ).append( "<div class=\"remove\"></br> Hello, "+ob[values[0]
     // skip loop if the property is from prototype
     if (!ob.hasOwnProperty(key)) continue;
     var obj = ob[key];
-    help += "</br>"
+    help += " </br> "
     for (var prop in obj) {
         // skip loop if the property is from prototype
         if(!obj.hasOwnProperty(prop)) continue;
 
-        help += " ---) \""+key+" "+prop+"\"</br>"
+        help += " ---) \""+key+" "+prop+"\" </br> "
 
     }
 }
       help += "</br> use  \"clear\" for clearing prompt</br>"
-    $( ".new_container" ).append( "<div class=\"remove\"></br> use following commands: "+help+"</div>" );
+      typeWriter("</br> use following commands: "+help,20);
     help = ""
 }
 
   else{
-$( ".new_container" ).append( "<div class=\"remove\"></br> Command not found. </br></br> Sorry \"" +values[0] +"\" is not recognized.  Type help for more info</div>" );
 
+
+typeWriter("</br> Command not found. </br> your input \"" +values[0] +"\" is not recognized.  Type help for more info",20);
  }
 
  if(value=="clear"){
    $(".remove").remove();
-   $( ".new_container" ).append( element );
-   last_select("p").focus();
  }
  else{
-   $( ".new_container" ).append( element );
  }
 
 }
@@ -114,9 +114,75 @@ function calculate_age(dob) {
     return Math.abs(age_dt.getUTCFullYear() - 1970).toString();
 }
  function redirect(url){
-   $( ".new_container" ).append( "<div class=\"remove\"></br>redirecting to  "+ url +". </div>" );
+  typeWriter("</br>redirecting to  "+ url,10 )
    window.location = url;
  }
+
+
+ /**function typeWriter(txt) {
+   var i = 0;
+   var speed = 60;
+   var index ;
+     setInterval(function(){
+        if (i < txt.length) {
+          index = txt.indexOf("</br>");
+          if(index==i){
+            txt = txt.slice(index+5);
+            i=0;
+            $( ".text" ).append('</br>');
+
+        }
+
+       $( ".text" ).append(txt.charAt(i))  ;
+       i++;
+     }
+     else{
+       clearInterval(animation);
+     }
+     alert(speed)
+     }, speed);
+ }**/
+
+var enter;
+function typeWriter(txt,speed){
+  var i = 0;
+  var index ;
+  enter = false;
+  f()
+ function f() {
+if(!enter){
+   if (i < txt.length) {
+     index = txt.indexOf("</br>");
+     if(index==i){
+       txt = txt.slice(index+5);
+       i=0;
+       $( ".anime" ).append('</br>');
+}
+     $( ".anime" ).append(txt.charAt(i))  ;
+     i++;
+     setTimeout(f, speed);
+     }
+     else{
+       $("div").removeClass("anime");
+
+       $( ".new_container" ).append( element );
+
+             last_select(".single-line").focus();
+             enter = true
+             $( ".new_container" ).append( "<div class=\"remove anime\"></div>" );
+     }
+    }
+    else{
+      //speed = -10
+      //enter = false
+      $( ".anime" ).append(txt.slice(i));
+      $("div").removeClass("anime");
+      //setTimeout(f, speed);
+    }
+   }
+ }
+
+
 
 //var allSelects = document.getElementsByTagName("p");
 //var lastSelect = allSelects[allSelects.length-1];

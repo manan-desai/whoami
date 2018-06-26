@@ -88,9 +88,11 @@ margin-top: 50;
   }
 }
 
+
 [contenteditable="true"].single-line {
     white-space: nowrap;
     width:200px;
+    color: green;
 }
 [contenteditable="true"].single-line br {
     display:none;
@@ -103,7 +105,7 @@ margin-top: 50;
 
 @media only screen and (max-width: 600px) {
     body{
-      font-size: 10px;
+      font-size: 12px;
     }
     p{
           margin-top: 15;
@@ -127,4 +129,21 @@ margin-top: 50;
     #p_close:active{
       background: #ff0000;
     }
+}
+
+/*not used*/
+.typewriter  {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 200 }
 }
