@@ -144,11 +144,12 @@ function calculate_age(dob) {
 
 var enter;
 function typeWriter(txt,speed){
+    $( ".bottom" ).scrollIntoView();
   var i = 0;
   var index ;
   enter = false;
     var f=()=> {
-    $( ".bottom" ).scrollIntoView();
+  
 if(!enter){
    if (i < txt.length) {
      index = txt.indexOf("</br>");
