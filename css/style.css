@@ -9,7 +9,10 @@
 }
 
 .botton{
-   margin-bottom:20px;
+       overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+    margin-bottom: 100px;
 }
 #main_container{
     border-color: #00ffff;
