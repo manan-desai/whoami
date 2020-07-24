@@ -148,7 +148,7 @@ function typeWriter(txt,speed){
   var index ;
   enter = false;
   f()
- function f() {
+  var f=()=> {
     $( ".bottom" ).scrollIntoView();
 if(!enter){
    if (i < txt.length) {
