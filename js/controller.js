@@ -89,7 +89,7 @@ typeWriter("</br> Hello, "+ob[values[0]],20);
     }
 }
       help += "</br> use  \"clear\" for clearing prompt</br>"
-      typeWriter("</br> use following commands: "+help,20);
+      typeWriter("</br> use following commands: "+help,50);
     help = ""
 }
 else if(value=="clear"){
@@ -149,6 +149,7 @@ function typeWriter(txt,speed){
   enter = false;
   f()
  function f() {
+    $( ".bottom" ).scrollIntoView();
 if(!enter){
    if (i < txt.length) {
      index = txt.indexOf("</br>");
@@ -179,7 +180,7 @@ if(!enter){
       //setTimeout(f, speed);
     }
    }
-   $( ".bottom" ).scrollIntoView();
+  
  }
 
 
