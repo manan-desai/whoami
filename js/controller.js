@@ -49,7 +49,8 @@ var ob = {
     get twitter() {redirect("https://twitter.com/manan5439")},
     get insta() {redirect("https://www.instagram.com/manan5439")},
     get stackoverflow() {redirect("https://stackoverflow.com/users/9918920/manan5439")},
-    get github() {redirect("https://github.com/manan5439")}
+    get github() {redirect("https://github.com/manan5439")},
+    get project(){redirect('https://youtu.be/di_7B-S1Npw')}
   },
   contact:{
     phone:"My phone number is +919722424299",
