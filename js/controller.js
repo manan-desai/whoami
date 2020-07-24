@@ -92,6 +92,9 @@ typeWriter("</br> Hello, "+ob[values[0]],20);
       typeWriter("</br> use following commands: "+help,20);
     help = ""
 }
+else if(value=="clear"){
+   $(".remove").remove();
+ }
 
   else{
 
@@ -99,11 +102,7 @@ typeWriter("</br> Hello, "+ob[values[0]],20);
 typeWriter("</br> Command not found. </br> your input \"" +values[0] +"\" is not recognized.  Type help for more info",20);
  }
 
- if(value=="clear"){
-   $(".remove").remove();
- }
- else{
- }
+
 
 }
 
