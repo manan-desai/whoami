@@ -147,8 +147,7 @@ function typeWriter(txt,speed){
   var i = 0;
   var index ;
   enter = false;
-  f()
-  var f=()=> {
+    var f=()=> {
     $( ".bottom" ).scrollIntoView();
 if(!enter){
    if (i < txt.length) {
@@ -180,6 +179,8 @@ if(!enter){
       //setTimeout(f, speed);
     }
    }
+  f()
+
   
  }
 
