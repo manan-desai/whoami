@@ -180,6 +180,7 @@ if(!enter){
       //setTimeout(f, speed);
     }
    }
+   $( ".bottom" ).scrollIntoView();
  }
 
 
