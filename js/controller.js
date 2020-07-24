@@ -63,12 +63,12 @@ function commands(value){
   var values = value.toLowerCase().split(" ");
 if(typeof(ob[values[0]])=="string"){
 
-typeWriter("</br> Hello, "+ob[values[0]],20);
+typeWriter("</br> Hello, "+ob[values[0]],10);
   }
 
   else if(typeof(ob[values[0]])=="object"){               //if obj
     if(typeof(ob[values[0]][values[1]])=="string"){
-      typeWriter("Hello, "+ob[values[0]][values[1]],20)
+      typeWriter("Hello, "+ob[values[0]][values[1]],10)
     }
   }
 
@@ -89,7 +89,7 @@ typeWriter("</br> Hello, "+ob[values[0]],20);
     }
 }
       help += "</br> use  \"clear\" for clearing prompt</br>"
-      typeWriter("</br> use following commands: "+help,50);
+      typeWriter("</br> use following commands: "+help,10);
     help = ""
 }
 else if(value=="clear"){
